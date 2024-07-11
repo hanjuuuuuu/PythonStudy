@@ -1,17 +1,21 @@
+from collections import Counter
+
+
 def solution(k, tangerine):
-    answer = 0
-    graph = []
-    n = 0
-    for i in range(len(tangerine)):
-        if [tangerine[i], tangerine.count(tangerine[i])] not in graph:
-            graph.append([tangerine[i], tangerine.count(tangerine[i])])
-    graph.sort(key=lambda x: -x[1])
+    # 귤 크기와 그 개수를 세기
+    count_map = Counter(tangerine)
 
-    for j in range(len(graph)):
-        if n >= k:
-            answer += j
+    # 귤 크기를 개수 기준으로 내림차순 정렬
+    sorted_counts = sorted(count_map.values(), reverse=True)
+
+    # k개를 선택하면서 종류 수를 최소화
+    total = 0
+    distinct_types = 0
+
+    for count in sorted_counts:
+        total += count
+        distinct_types += 1
+        if total >= k:
             break
-        else:
-            n += graph[j][1]
 
-    return answer
+    return distinct_types
