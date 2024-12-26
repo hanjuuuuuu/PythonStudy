@@ -10,11 +10,11 @@ def sum(num):
 
 n = int(input())
 arr = []
-answer = []
-for i in range(n):
-    guitar = int(input())
+for _ in range(n):
+    guitar = input().rstrip()
     arr.append(guitar)
 
 arr.sort(key=lambda x: (len(x), sum(x), x))
-for i in arr:
+for i in arr:  
     print(i)
+    
