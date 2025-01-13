@@ -1,0 +1,18 @@
+import sys
+input = sys.stdin.readline 
+
+n, score, p = map(int, input().split())
+rank = list(map(int, input().split()))
+
+answer = 1
+if n == 0:
+     print(1)
+else: 
+    if n == len(rank) and rank[-1] >= score:
+        print(-1)
+    else:
+        for i in range(n):
+            if  rank[i] <= score:
+                    answer = i + 1
+                    print(answer)
+                    break
