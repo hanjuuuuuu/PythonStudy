@@ -10,7 +10,7 @@ answer=0
 
 for i in range(n-1):
     if minPrice > price[i]:
-        minPrice=price[i]
-    answer += minPrice*km[i]
+        minPrice = price[i]
+    answer += minPrice * km[i]
 
 print(answer)

@@ -7,7 +7,7 @@ while True:
         break
     if a == b and b == c:
         print("Equilateral")
-    elif sum((a,b,c)) - max((a,b,c)) < max((a,b,c)):
+    elif sum((a,b,c)) - max((a,b,c)) <= max((a,b,c)):
         print("Invalid")
     elif a != b and b != c and a !=c:
         print("Scalene")

@@ -3,17 +3,9 @@ input = sys.stdin.readline
 
 n, m = map(int, input().split())
 
-keyword = []
-upload = []
-
-for _ in range(n):
-    keyword.append(input().rstrip())
-
-keyword = set(keyword)
+keyword = set([input().rstrip() for _ in range(n)])
 
 for _ in range(m):
-    upload = list(input().rstrip().split(','))
-    keyword = keyword - set(upload)
+    upload = set(input().rstrip().split(','))
+    keyword -= upload
     print(len(keyword))
-
-
